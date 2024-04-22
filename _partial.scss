@@ -1,0 +1,49 @@
+//_partial Skabelon
+
+//VARIABLES
+
+//Padding_______________________________________________
+//Desktop padding
+$padding-desktop: 100px;
+
+//Tablet padding
+$padding-tablet: 50px;
+
+//Mobil padding
+$padding-mobil: 10px;
+
+//Top og bund padding
+$padding-top: 50px;
+$padding-bottom: 50px;
+
+//Gap padding
+$padding-gap: 50px;
+
+
+//MIXINS
+
+//Flex____________________________________________________
+//flex-column, 50px-gap
+@mixin flex-column($gap:50px, $flex-direction:column) {  
+    display: flex;
+    flex-direction: $flex-direction;
+    gap: $gap;
+}
+
+//Grid____________________________________________________
+//Grid med 2 columns
+@mixin grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+// Mobil grid - 2 rows, 50px-gap
+@mixin mobil-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+
+

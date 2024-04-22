@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* 
+Kald på variabel: partial.$variabel-navn;
+Kald på mixin: @include partial.mixin-navn;
+*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.cta {
+  background-color: black;
+  color: white;
+  padding: 10px 30px 10px 30px;
+}
+.cta:hover {
+  background-color: grey;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 100px 1fr 100px;
+  min-height: 100vh;
+}
+body header {
+  grid-row: 1/2;
+  background-color: black;
+}
+body main {
+  grid-row: 2/3;
+}
+body footer {
+  grid-row: 3/4;
+  background-color: orange;
+}/*# sourceMappingURL=datasikkerhed.css.map */

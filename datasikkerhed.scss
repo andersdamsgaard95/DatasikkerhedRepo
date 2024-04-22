@@ -1,0 +1,55 @@
+@use 'partial'; 
+/* 
+Kald på variabel: partial.$variabel-navn;
+Kald på mixin: @include partial.mixin-navn;
+*/ 
+
+
+* { //Kalder på alt
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px; //Brug rem til at gøre andre skriftstørrelser relativ til den her
+    font-family: 'Times New Roman', Times, serif //Tilføj primær font her
+}
+
+//Fonts
+h1 {}
+
+h2 {}
+
+h3 {}
+
+//Knap
+.cta {
+    background-color: black;
+    color: white;
+    padding: 10px 30px 10px 30px;
+
+        &:hover {
+            background-color: grey;
+        }
+}
+
+body {
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    min-height: 100vh; //Gør body's højde 100% af view height selvom indhold er tomt
+
+        header {
+            grid-row: 1/2;
+            background-color: black;
+        }
+
+        main {
+            grid-row: 2/3;
+        }
+
+        footer {
+            grid-row: 3/4;
+            background-color: orange;
+        }
+}
+
