@@ -13,11 +13,14 @@ $padding-tablet: 50px;
 $padding-mobil: 10px;
 
 //Top og bund padding
-$padding-top: 50px;
-$padding-bottom: 50px;
+$padding-top-bottom: 50px;
 
 //Gap padding
 $padding-gap: 50px;
+
+//Farver__________________________________________________
+$primary-red: #851717;
+$black-faded: #454545;
 
 
 //MIXINS
@@ -34,13 +37,14 @@ $padding-gap: 50px;
 //Grid med 2 columns
 @mixin grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
 }
 
 // Mobil grid - 2 rows, 50px-gap
-@mixin mobil-grid {
+@mixin mobil-grid($template-rows: auto auto) {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: $template-rows;
     grid-template-columns: 1fr;
     gap: 50px;
 }
