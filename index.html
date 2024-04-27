@@ -17,6 +17,7 @@
     <!-------------------------------------------->
     <title>Informationsside vedr. datasikkerhed og overvågning på sociale medier</title>
     <link rel="stylesheet" href="datasikkerhed.css">
+    <script src="datasikkerhed.js" defer></script>
 </head>
 
 <body>
@@ -48,15 +49,15 @@
                 <div id="bb-is-watching-grid">
                     <div id="so-me-knapper">
                         <div id="ig-knap">
-                            <p>Instagram</p>
+                            <h3>Instagram</h3>
                             <p id="ig-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sed harum totam ullam ad voluptatum quidem, expedita magnam assumenda in aliquam, saepe quisquam deserunt deleniti rerum rem blanditiis architecto reprehenderit.</p>
                         </div>
                         <div id="fb-knap">
-                            <p>Facebook</p>
+                            <h3>Facebook</h3>
                             <p id="fb-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, asperiores reiciendis. Voluptate aperiam explicabo vitae voluptatum, enim officia rerum doloribus sed minima cum, fugiat vero reiciendis dolorum nobis. Eius, ducimus!</p>
                         </div>
                         <div id="tt-knap">
-                            <p>TikTok</p>
+                            <h3>TikTok</h3>
                             <p id="tt-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quis expedita sed sit, in laudantium. Dolorum suscipit fuga veniam distinctio! Ipsa sint obcaecati unde, doloribus neque modi mollitia corrupti dolor.</p>
                         </div>
                     </div>
@@ -81,11 +82,18 @@
                     <div id="ja-knap">Ja</div>
                     <div id="nej-knap">Nej</div>
                 </div>
+                <p id="start-forfra-test">Start forfra</p>
             </div>
         </section>
 
         <!--Quiz-->
         <section class="ygrid bgblack">
+            <!--Quiz forside-->
+            <div id="quiz-forside" class="content">
+                <h2>Har du lært noget?</h2>
+                <div id="quiz-start-knap">Quiz!</div>
+            </div>
+            <!--Quizzen-->
             <div id="quiz" class="content">
                 <h2>Hvor meget ved du om overvågning på sociale medier?</h2>
                 <div id="quiz-svar-container">
@@ -93,6 +101,11 @@
                     <div id="quiz-svar2" class="quiz-svar">Svar2</div>
                     <div id="quiz-svar3" class="quiz-svar">Svar3</div>
                     <div id="quiz-svar4" class="quiz-svar">Svar4</div>
+                </div>
+                <div id="quiz-controls">
+                    <p id="prøv-igen-knap">Prøv igen</p>
+                    <p id="feedback">Feedback</p>
+                    <p id="næste-spørgsmål">Næste spørgsmål</p>
                 </div>
             </div>
         </section>
