@@ -57,7 +57,7 @@ h3 {
 }
 
 .bg-ig-color {
-    background-image: url(orange-opacity.png);
+    background-image: url(orange-opacity.svg);
 }
 
 .bg-fb-color {
@@ -78,11 +78,11 @@ h3 {
     font-family: "Playfair Display SC", serif;
 
         &:hover {
-            background-color: grey;
+            background-color: partial.$primary-red;
         }
 }
 
-//Yderste grid til justering af max-width
+//Yderste grid til justering af max-width og padding
 .ygrid {
     display: grid;
     grid-template-columns: 0 1fr 0;
@@ -163,7 +163,7 @@ body {
 
                     //Mobil layout
                     @media screen and (max-width: 700px) {
-                    @include partial.mobil-grid($template-rows: 500px auto);
+                    @include partial.mobil-grid($template-rows: 300px auto);
                     height: auto;
 
                         .img-container {
@@ -175,6 +175,10 @@ body {
                             grid-row: 2/3;
                         }
                     }
+
+                    @media screen and (max-width:500px) {
+                        @include partial.mobil-grid($template-rows: 300px auto);
+                    }
                 }
 
                 //Big brother is watching you
@@ -184,6 +188,10 @@ body {
                     min-height: 600px;
                     @include partial.flex-column;
                     justify-content: center;
+
+                    @media screen and (max-width: 500px) {
+                        min-height: auto;
+                    }
 
                         #bb-is-watching-grid {
                             @include partial.grid;
@@ -206,6 +214,10 @@ body {
                                                 #ig-text {
                                                     display: none;
                                                 }
+                                            
+                                            @media screen and (max-width:500px) {
+                                                padding: 10px 0 10px 0;
+                                            }
                                         }
                                         #fb-knap {
                                             padding: 30px 0 30px 0;
@@ -221,6 +233,10 @@ body {
 
                                                 #fb-text {
                                                     display: none;
+                                                }
+
+                                                @media screen and (max-width:500px) {
+                                                    padding: 10px 0 10px 0;
                                                 }
                                         }
                                         #tt-knap {
@@ -238,13 +254,17 @@ body {
                                                 #tt-text {
                                                     display: none;
                                                 }
+
+                                                @media screen and (max-width:500px) {
+                                                    padding: 10px 0 10px 0;
+                                                }
                                         }
                                         
                                 }
-                                #so-me-text-container {
+                                #some-info {
                                     grid-column: 2/3;
                                     padding: 30px;
-                                    border: solid;
+                                    //border: solid;
                                     //display: none;
                                 }
                             
@@ -252,7 +272,7 @@ body {
                             @media screen and (max-width: 700px) {
                             grid-template-columns: 1fr;
 
-                                #so-me-text-container {
+                                #some-info {
                                     display: none;
                                 }
                             }
@@ -265,8 +285,14 @@ body {
                     @include partial.flex-column($gap:100px);
                     align-items: center;
                     justify-content: center;
-                    min-height: 600px;
+                    min-height: 500px;
+                    padding-top: partial.$padding-top-bottom;
+                    padding-bottom: partial.$padding-top-bottom;
                     //display: none; //DISPLAY
+
+                    @media screen and (max-width: 500px) {
+                        min-height: auto;
+                    }
 
                         h2 {
                             color: white;
@@ -288,8 +314,14 @@ body {
                     @include partial.flex-column($gap:100px);
                     align-items: center;
                     justify-content: center;
-                    min-height: 600px;
+                    min-height: 500px;
+                    padding-top: partial.$padding-top-bottom;
+                    padding-bottom: partial.$padding-top-bottom;
                     display: none; //DISPLAY
+
+                    @media screen and (max-width: 500px) {
+                        min-height: auto;
+                    }
 
                         #test-question {
                             color: white;
@@ -334,8 +366,14 @@ body {
                     @include partial.flex-column($gap:100px);
                     align-items: center;
                     justify-content: center;
-                    min-height: 600px;
+                    min-height: 500px;
+                    padding-top: partial.$padding-top-bottom;
+                    padding-bottom: partial.$padding-top-bottom;
                     //display: none; //DISPLAY
+
+                    @media screen and (max-width: 500px) {
+                        min-height: auto;
+                    }
 
                         h2 {
                             color: white;
@@ -354,16 +392,33 @@ body {
                 
                 //Quizen
                 #quiz {
-                    min-height: 600px;
+                    min-height: 500px;
                     padding-top: partial.$padding-top-bottom;
                     padding-bottom: partial.$padding-top-bottom;
-                    @include partial.flex-column($gap: 100px);
+                    @include partial.flex-column;
                     align-items: center;
                     justify-content: center;
                     display: none; //DISPLAY
 
+                    @media screen and (max-width: 500px) {
+                        min-height: auto;
+                    }
+
                         h2 {
                             color: white;
+                        }
+
+                        #total-quiz-reset-container {
+                            display: flex;
+                            align-items: start;
+                            width: 100%;
+                            max-width: 850px;
+                            display: none;
+
+                                #restart-quiz {
+                                    color: white;
+                                    cursor: pointer;
+                                }
                         }
 
                         #quiz-svar-container {
@@ -381,6 +436,11 @@ body {
                                     padding-bottom: 50px;
                                     text-align: center;
                                     cursor: pointer;
+
+                                        @media screen and (max-width: 500px) {
+                                            padding-top: 20px;
+                                            padding-bottom: 20px;
+                                        }
                                 }
 
                                 #svar1 {
@@ -449,21 +509,22 @@ body {
                             //Mobil layout
                             @media screen and (max-width: 600px) {
                                 grid-template-rows: auto auto;
-                                grid-template-columns: 1fr;
+                                grid-template-columns: 1fr auto 1fr;
                                 gap: 50px;
 
                                     #feedback {
                                         grid-row: 1/2;
-                                        grid-column: 1/2;
+                                        grid-column: 2/3;
                                         text-align: center;
                                     }
                                     #prøv-igen-knap {
                                         grid-column: 1/2;
                                         grid-row: 2/3;
+                                        text-align: start;
                                         cursor: pointer;
                                     }
                                     #næste-spørgsmål {
-                                        grid-column: 1/2;
+                                        grid-column: 3/4;
                                         grid-row: 2/3;
                                         text-align: end;
                                         cursor: pointer;
@@ -475,7 +536,13 @@ body {
 
         footer {
             grid-row: 3/4;
-            background-color: orange;
+            display: flex;
+            align-items: center;
+            
+                p {
+                    font-family: "Playfair Display SC", serif;
+                    font-size: 0.6rem;
+                }
         }
 }
 

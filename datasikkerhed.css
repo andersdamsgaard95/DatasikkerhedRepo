@@ -53,7 +53,7 @@ h3 {
 }
 
 .bg-ig-color {
-  background-image: url(orange-opacity.png);
+  background-image: url(orange-opacity.svg);
 }
 
 .bg-fb-color {
@@ -74,7 +74,7 @@ h3 {
   font-family: "Playfair Display SC", serif;
 }
 .cta:hover {
-  background-color: grey;
+  background-color: #851717;
 }
 
 .ygrid {
@@ -157,7 +157,7 @@ body main #hero #hero-text {
 @media screen and (max-width: 700px) {
   body main #hero {
     display: grid;
-    grid-template-rows: 500px auto;
+    grid-template-rows: 300px auto;
     grid-template-columns: 1fr;
     gap: 50px;
     height: auto;
@@ -171,6 +171,14 @@ body main #hero #hero-text {
     grid-row: 2/3;
   }
 }
+@media screen and (max-width: 500px) {
+  body main #hero {
+    display: grid;
+    grid-template-rows: 300px auto;
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
 body main #bb-is-watching {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -179,6 +187,11 @@ body main #bb-is-watching {
   flex-direction: column;
   gap: 50px;
   justify-content: center;
+}
+@media screen and (max-width: 500px) {
+  body main #bb-is-watching {
+    min-height: auto;
+  }
 }
 body main #bb-is-watching #bb-is-watching-grid {
   display: grid;
@@ -206,6 +219,11 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap:hover {
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap #ig-text {
   display: none;
 }
+@media screen and (max-width: 500px) {
+  body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap {
+    padding: 10px 0 10px 0;
+  }
+}
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap {
   padding: 30px 0 30px 0;
   text-align: center;
@@ -221,6 +239,11 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap:hover {
 }
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap #fb-text {
   display: none;
+}
+@media screen and (max-width: 500px) {
+  body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap {
+    padding: 10px 0 10px 0;
+  }
 }
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap {
   padding: 30px 0 30px 0;
@@ -238,16 +261,20 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap:hover {
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap #tt-text {
   display: none;
 }
-body main #bb-is-watching #bb-is-watching-grid #so-me-text-container {
+@media screen and (max-width: 500px) {
+  body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap {
+    padding: 10px 0 10px 0;
+  }
+}
+body main #bb-is-watching #bb-is-watching-grid #some-info {
   grid-column: 2/3;
   padding: 30px;
-  border: solid;
 }
 @media screen and (max-width: 700px) {
   body main #bb-is-watching #bb-is-watching-grid {
     grid-template-columns: 1fr;
   }
-  body main #bb-is-watching #bb-is-watching-grid #so-me-text-container {
+  body main #bb-is-watching #bb-is-watching-grid #some-info {
     display: none;
   }
 }
@@ -257,7 +284,14 @@ body main #test-forside {
   gap: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 600px;
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 500px) {
+  body main #test-forside {
+    min-height: auto;
+  }
 }
 body main #test-forside h2 {
   color: white;
@@ -277,8 +311,15 @@ body main #test {
   gap: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 600px;
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: none;
+}
+@media screen and (max-width: 500px) {
+  body main #test {
+    min-height: auto;
+  }
 }
 body main #test #test-question {
   color: white;
@@ -321,7 +362,14 @@ body main #quiz-forside {
   gap: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 600px;
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 500px) {
+  body main #quiz-forside {
+    min-height: auto;
+  }
 }
 body main #quiz-forside h2 {
   color: white;
@@ -336,18 +384,34 @@ body main #quiz-forside #quiz-start-knap {
   font-size: 1.6rem;
 }
 body main #quiz {
-  min-height: 600px;
+  min-height: 500px;
   padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
   align-items: center;
   justify-content: center;
   display: none;
 }
+@media screen and (max-width: 500px) {
+  body main #quiz {
+    min-height: auto;
+  }
+}
 body main #quiz h2 {
   color: white;
+}
+body main #quiz #total-quiz-reset-container {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  max-width: 850px;
+  display: none;
+}
+body main #quiz #total-quiz-reset-container #restart-quiz {
+  color: white;
+  cursor: pointer;
 }
 body main #quiz #quiz-svar-container {
   display: grid;
@@ -363,6 +427,12 @@ body main #quiz #quiz-svar-container .quiz-svar {
   padding-bottom: 50px;
   text-align: center;
   cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  body main #quiz #quiz-svar-container .quiz-svar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 body main #quiz #quiz-svar-container #svar1 {
   grid-row: 1/2;
@@ -425,21 +495,22 @@ body main #quiz #quiz-controls #næste-spørgsmål {
 @media screen and (max-width: 600px) {
   body main #quiz #quiz-controls {
     grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto 1fr;
     gap: 50px;
   }
   body main #quiz #quiz-controls #feedback {
     grid-row: 1/2;
-    grid-column: 1/2;
+    grid-column: 2/3;
     text-align: center;
   }
   body main #quiz #quiz-controls #prøv-igen-knap {
     grid-column: 1/2;
     grid-row: 2/3;
+    text-align: start;
     cursor: pointer;
   }
   body main #quiz #quiz-controls #næste-spørgsmål {
-    grid-column: 1/2;
+    grid-column: 3/4;
     grid-row: 2/3;
     text-align: end;
     cursor: pointer;
@@ -447,5 +518,10 @@ body main #quiz #quiz-controls #næste-spørgsmål {
 }
 body footer {
   grid-row: 3/4;
-  background-color: orange;
+  display: flex;
+  align-items: center;
+}
+body footer p {
+  font-family: "Playfair Display SC", serif;
+  font-size: 0.6rem;
 }/*# sourceMappingURL=datasikkerhed.css.map */
