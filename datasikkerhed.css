@@ -75,6 +75,7 @@ h3 {
 }
 .cta:hover {
   background-color: #851717;
+  color: white;
 }
 
 .ygrid {
@@ -205,8 +206,7 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper {
   gap: 50px;
 }
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap {
-  padding: 30px 0 30px 0;
-  text-align: center;
+  padding: 30px 10px 30px 10px;
   background-image: url(orange-opacity.svg);
   cursor: pointer;
   display: flex;
@@ -216,17 +216,19 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap {
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap:hover {
   background-color: orange;
 }
+body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap h3 {
+  text-align: center;
+}
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap #ig-text {
   display: none;
 }
 @media screen and (max-width: 500px) {
   body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #ig-knap {
-    padding: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
   }
 }
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap {
-  padding: 30px 0 30px 0;
-  text-align: center;
+  padding: 30px 10px 30px 10px;
   background-image: url(blue-opacity.svg);
   cursor: pointer;
   display: flex;
@@ -237,17 +239,19 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap {
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap:hover {
   background-color: blue;
 }
+body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap h3 {
+  text-align: center;
+}
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap #fb-text {
   display: none;
 }
 @media screen and (max-width: 500px) {
   body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #fb-knap {
-    padding: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
   }
 }
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap {
-  padding: 30px 0 30px 0;
-  text-align: center;
+  padding: 30px 10px 30px 10px;
   background-image: url(black-opacity.svg);
   cursor: pointer;
   display: flex;
@@ -258,12 +262,15 @@ body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap {
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap:hover {
   background-color: black;
 }
+body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap h3 {
+  text-align: center;
+}
 body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap #tt-text {
   display: none;
 }
 @media screen and (max-width: 500px) {
   body main #bb-is-watching #bb-is-watching-grid #so-me-knapper #tt-knap {
-    padding: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
   }
 }
 body main #bb-is-watching #bb-is-watching-grid #some-info {
@@ -305,6 +312,10 @@ body main #test-forside #test-start-knap {
   cursor: pointer;
   font-size: 1.6rem;
 }
+body main #test-forside #test-start-knap:hover {
+  background-color: #454545;
+  color: white;
+}
 body main #test {
   display: flex;
   flex-direction: column;
@@ -340,6 +351,9 @@ body main #test #svar-container #ja-knap, body main #test #svar-container #nej-k
   padding-top: 50px;
   padding-bottom: 50px;
   cursor: pointer;
+}
+body main #test #svar-container #ja-knap:hover, body main #test #svar-container #nej-knap:hover {
+  scale: 105%;
 }
 @media screen and (max-width: 700px) {
   body main #test #svar-container {
@@ -383,6 +397,10 @@ body main #quiz-forside #quiz-start-knap {
   cursor: pointer;
   font-size: 1.6rem;
 }
+body main #quiz-forside #quiz-start-knap:hover {
+  background-color: #851717;
+  color: white;
+}
 body main #quiz {
   min-height: 500px;
   padding-top: 50px;
@@ -401,21 +419,28 @@ body main #quiz {
 }
 body main #quiz h2 {
   color: white;
+  max-width: 850px;
+  font-size: 1.5rem;
 }
 body main #quiz #total-quiz-reset-container {
-  display: flex;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   max-width: 850px;
-  display: none;
 }
 body main #quiz #total-quiz-reset-container #restart-quiz {
   color: white;
   cursor: pointer;
+  grid-column: 1/2;
+}
+body main #quiz #total-quiz-reset-container #spørgsmål-tæller {
+  grid-column: 2/3;
+  text-align: end;
+  color: white;
 }
 body main #quiz #quiz-svar-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 50px;
   width: 100%;
@@ -423,8 +448,10 @@ body main #quiz #quiz-svar-container {
 }
 body main #quiz #quiz-svar-container .quiz-svar {
   background-color: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   cursor: pointer;
 }
