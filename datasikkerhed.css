@@ -518,6 +518,7 @@ body main #quiz #quiz-controls #næste-spørgsmål {
   grid-column: 3/4;
   text-align: end;
   cursor: pointer;
+  display: none;
 }
 @media screen and (max-width: 600px) {
   body main #quiz #quiz-controls {

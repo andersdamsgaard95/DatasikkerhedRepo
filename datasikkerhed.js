@@ -10,46 +10,109 @@ const restartTest = document.getElementById('start-forfra-test');
 //Test object
 const forhøring = {
     sp1: {
-        text: 'spørgsmål 1',
+        text: '1 - Bruger du regelmæssigt sociale medieplatforme?',
         ja: 'sp2j',
         nej: 'sp2n'
     },
 
     sp2j: {
-        text: 'spørgsmål 2.1',
+        text: '2ja - Har du nogensinde gennemgået privatlivsindstillingerne på dine sociale mediekonti?',
         ja: 'sp3jj',
         nej: 'sp3jn'
     },
     
     sp2n: {
-        text: 'spørgsmål 2.2',
+        text: '2nej - Deler du ofte personlige oplysninger på sociale medieplatforme?',
         ja: 'sp3nj',
         nej: 'sp3nn'
     },
 
     sp3jj: {
-        text: 'spørgsmål 3.1',
+        text: '3ja - Føler du dig sikker i din forståelse af, hvordan dine data bruges på sociale medieplatforme?',
         ja: 'sp4jjj',
         nej: 'sp4jjn'
     },
 
     sp3jn: {
-        text: 'spørgsmål 3.2',
+        text: '3nej - Ville du være interesseret i at lære mere om, hvordan sociale medieplatforme indsamler og bruger dine data?',
         ja: 'sp4jnj',
         nej: 'sp4jnn'
     },
     
     sp3nj: {
-        text: 'spørgsmål 3.3',
+        text: '3ja - Har du overvejet de potentielle risici ved at dele personlige oplysninger online?',
         ja: 'sp4njj',
         nej: 'sp4njn'
     },
     
     sp3nn: {
-        text: 'spørgsmål 3.4',
+        text: '3nej - Ved du, hvordan du justerer dine privatlivsindstillinger for at kontrollere, hvem der kan se dine',
         ja: 'sp4nnj',
         nej: 'sp4nnn'
     },
+
+    sp4jjj: {
+        text: '4ja - Det ser ud til at du har godt styr på dit digitale privatliv.'
+    },
+
+    sp4njj: {
+        text: '4ja - Det lyder til at du er opmærksom på dit online privatliv.'
+    },
+
+    sp4jnj: {
+        text: 'Er du klar over de typer af data, som sociale medieplatforme indsamler om dig?',
+        ja: 'sp5j',
+        nej: 'sp5n'
+    },
+
+    sp4jnn: {
+        text: 'I så fald er det vigtigt at du er opmærksom på, at dine data kan bruges på måder, du ikke er fuldt ud klar over.'
+    },
+
+    sp4jjn: {
+        text: 'Nej... Du bør overveje at lære mere om privatlivsindstillinger og datanavngivning.'
+    },
+
+    sp4njn: {
+        text: 'Ok... Det er vigtigt at forstå de potentielle konsekvenser af at dele for meget online.'
+    },
+
+    sp4nnj: {
+        text: 'Fedt! Det lyder til at du aktivt administrerer dit online privatliv.'
+    },
+
+    sp4nnn: {
+        text: 'Du bør overveje at gennemgå og justere dine privatlivsindstillinger for at beskytte dine personlige oplysninger bedre.'
+    },
+
+    sp5j: {
+        text: 'Føler du dig komfortabel med mængden af data, som sociale medieplatforme indsamler om dig?',
+        ja: 'sp5jj',
+        nej: 'sp5jn'
+    },
+
+    sp5n: {
+        text: 'Har du nogensinde stødt på målrettede reklamer på sociale medier, der føltes invasive eller intrusiv?',
+        ja: 'sp5nj',
+        nej: 'sp5nn'
+    },
+
+    sp5jj: {
+        text: 'Det tyder på, at du måske har en afbalanceret tilgang til online privatliv.'
+    },
+
+    sp5jn: {
+        text: 'Ok... Du bør overveje at træffe foranstaltninger for at begrænse mængden af data, du deler online.'
+    },
+
+    sp5nj: {
+        text: 'Du kan overveje at gennemgå dine privatlivsindstillinger og annoncepræferencer.'
+    },
+
+    sp5nn: {
+        text: 'Ok... Det er stadig vigtigt at du er opmærksom på, hvordan dine data bruges til målrettet annoncering.'
+    },
+
 };
 
 //Start Test
@@ -187,6 +250,12 @@ function displayRound(round) {
     } else {
         totalReset.innerHTML = 'Start helt forfra';
     }
+
+    if (round === 5) {
+        næsteKnap.innerHTML = 'Videre'
+    } else {
+        næsteKnap.innerHTML = 'Næste spørgsmål'
+    }
 }
 
 //Svar funktion
@@ -200,7 +269,7 @@ function hvemVilVæreMillionær(event) {
         this.style.backgroundColor = 'green';
         feedback.innerHTML = 'RIGTIGT';
         feedback.style.color = 'green';
-        næsteKnap.innerHTML = 'Næste Spørgsmål';
+        næsteKnap.style.display = 'grid';
         næsteKnap.addEventListener('click', videre);
     }
     else {
@@ -244,7 +313,7 @@ function videre() {
     round++
 
     feedback.innerHTML = '';
-    næsteKnap.innerHTML = '';
+    næsteKnap.style.display = 'none';
     næsteKnap.removeEventListener('click', videre);
 
     svarMuligheder.forEach(function(element) {
