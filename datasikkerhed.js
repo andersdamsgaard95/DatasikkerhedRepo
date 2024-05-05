@@ -46,9 +46,27 @@ const forhøring = {
     },
     
     sp3nn: {
-        text: '3nej - Ved du, hvordan du justerer dine privatlivsindstillinger for at kontrollere, hvem der kan se dine',
+        text: '3nej - Ved du, hvordan du justerer dine privatlivsindstillinger for at kontrollere, hvem der kan se dine indlæg og oplysninger?',
         ja: 'sp4nnj',
         nej: 'sp4nnn'
+    },
+
+    sp4jnj: {
+        text: 'Er du klar over de typer af data, som sociale medieplatforme indsamler om dig?',
+        ja: 'sp5j',
+        nej: 'sp5n'
+    },
+
+    sp5j: {
+        text: 'Føler du dig komfortabel med mængden af data, som sociale medieplatforme indsamler om dig?',
+        ja: 'sp5jj',
+        nej: 'sp5jn'
+    },
+
+    sp5n: {
+        text: 'Har du nogensinde stødt på målrettede reklamer på sociale medier, der føltes invasive eller intrusiv?',
+        ja: 'sp5nj',
+        nej: 'sp5nn'
     },
 
     sp4jjj: {
@@ -57,12 +75,6 @@ const forhøring = {
 
     sp4njj: {
         text: '4ja - Det lyder til at du er opmærksom på dit online privatliv.'
-    },
-
-    sp4jnj: {
-        text: 'Er du klar over de typer af data, som sociale medieplatforme indsamler om dig?',
-        ja: 'sp5j',
-        nej: 'sp5n'
     },
 
     sp4jnn: {
@@ -83,18 +95,6 @@ const forhøring = {
 
     sp4nnn: {
         text: 'Du bør overveje at gennemgå og justere dine privatlivsindstillinger for at beskytte dine personlige oplysninger bedre.'
-    },
-
-    sp5j: {
-        text: 'Føler du dig komfortabel med mængden af data, som sociale medieplatforme indsamler om dig?',
-        ja: 'sp5jj',
-        nej: 'sp5jn'
-    },
-
-    sp5n: {
-        text: 'Har du nogensinde stødt på målrettede reklamer på sociale medier, der føltes invasive eller intrusiv?',
-        ja: 'sp5nj',
-        nej: 'sp5nn'
     },
 
     sp5jj: {
@@ -125,12 +125,20 @@ function startTest() {
     questionDisplay();
 }
 
-let currentQuestion = 'sp1';
-
 //Display spørgsmål funktion
 function questionDisplay () {
     let questionObject = forhøring[currentQuestion];
     testQuestion.innerHTML = questionObject.text;
+
+    //Fjerner Ja og Nej knapper hvis en af de sidste 11 objecter er currentQuestion
+    const conclusionsToTest = Object.keys(forhøring).slice(-11);
+    if (conclusionsToTest.includes(currentQuestion)) {
+        ja.style.display = 'none';
+        nej.style.display = 'none';
+    } else {
+        ja.style.display = 'block';
+        nej.style.display = 'block';
+    }
 }
 
 //Opdater spørgsmål funktion
