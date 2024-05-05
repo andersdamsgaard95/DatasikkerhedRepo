@@ -15,6 +15,7 @@ html {
 
 p {
   font-size: 1rem;
+  line-height: 1.2rem;
 }
 
 h1 {
@@ -23,6 +24,11 @@ h1 {
   font-style: normal;
   font-size: 2rem;
 }
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+}
 
 h2 {
   font-family: "Playfair Display SC", serif;
@@ -30,12 +36,22 @@ h2 {
   font-style: normal;
   font-size: 1.8rem;
 }
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+}
 
 h3 {
   font-family: "Playfair Display SC", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
+}
+@media screen and (max-width: 400px) {
+  h3 {
+    font-size: 1.2rem;
+  }
 }
 
 .bgblack {
@@ -123,6 +139,11 @@ body header #logo {
   font-size: 2rem;
   text-decoration: none;
   color: #851717;
+}
+@media screen and (max-width: 400px) {
+  body header #logo {
+    font-size: 1.6rem;
+  }
 }
 body main {
   grid-row: 2/3;
@@ -335,7 +356,14 @@ body main #test {
 body main #test #test-question {
   color: white;
   font-family: "Playfair Display SC", serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  line-height: normal;
+  word-break: break-word;
+}
+@media screen and (max-width: 400px) {
+  body main #test #test-question {
+    font-size: 1.4rem;
+  }
 }
 body main #test #svar-container {
   display: flex;
@@ -417,10 +445,18 @@ body main #quiz {
     min-height: auto;
   }
 }
-body main #quiz h2 {
+body main #quiz #quiz-question {
   color: white;
   max-width: 850px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  line-height: normal;
+  font-family: "Playfair Display SC", serif;
+  word-break: break-word;
+}
+@media screen and (max-width: 400px) {
+  body main #quiz #quiz-question {
+    font-size: 1.4rem;
+  }
 }
 body main #quiz #total-quiz-reset-container {
   display: grid;

@@ -18,6 +18,7 @@ html {
 //Fonts
 p {
     font-size: 1rem;
+    line-height: 1.2rem;
 }
 
 h1 {
@@ -25,6 +26,10 @@ h1 {
     font-weight: 400;
     font-style: normal;
     font-size: 2rem;
+
+        @media screen and (max-width: 400px) {
+            font-size: 1.6rem;
+        }
 }
 
 h2 {
@@ -32,6 +37,10 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-size: 1.8rem;
+
+        @media screen and (max-width: 400px) {
+            font-size: 1.4rem;
+        }
 }
 
 h3 {
@@ -39,6 +48,10 @@ h3 {
     font-weight: 400;
     font-style: normal;
     font-size: 1.6rem;
+
+        @media screen and (max-width: 400px) {
+            font-size: 1.2rem;
+        }
 }
 
 //Baggrundsfarver og billeder
@@ -76,7 +89,6 @@ h3 {
     max-width: fit-content;
     text-decoration: none;
     font-family: "Playfair Display SC", serif;
-    //transition: all 0.2s;
 
         &:hover {
             background-color: partial.$primary-red;
@@ -114,7 +126,7 @@ h3 {
 body {
     display: grid;
     grid-template-rows: 100px 1fr 100px;
-    min-height: 100vh; //Gør body's højde 100% af view height selvom indhold er tomt
+    min-height: 100vh;
 
         header {
             grid-row: 1/2;
@@ -129,6 +141,10 @@ body {
                     font-size: 2rem;
                     text-decoration: none;
                     color: partial.$primary-red;
+
+                        @media screen and (max-width: 400px) {
+                            font-size: 1.6rem;
+                        }
                 }
         }
 
@@ -204,7 +220,6 @@ body {
 
                                         #ig-knap {
                                             padding: 30px 10px 30px 10px;
-                                            //text-align: center;
                                             background-image: url(orange-opacity.svg);
                                             cursor: pointer;
                                             @include partial.flex-column($gap: 20px);
@@ -227,7 +242,6 @@ body {
                                         }
                                         #fb-knap {
                                             padding: 30px 10px 30px 10px;
-                                            //text-align: center;
                                             background-image: url(blue-opacity.svg);
                                             cursor: pointer;
                                             @include partial.flex-column($gap: 20px);
@@ -251,7 +265,6 @@ body {
                                         }
                                         #tt-knap {
                                             padding: 30px 10px 30px 10px;
-                                            //text-align: center;
                                             background-image: url(black-opacity.svg);
                                             cursor: pointer;
                                             @include partial.flex-column($gap: 20px);
@@ -345,8 +358,15 @@ body {
                         #test-question {
                             color: white;
                             font-family: "Playfair Display SC", serif;
-                            font-size: 1.8rem;
+                            font-size: 1.6rem;
+                            line-height: normal;
+                            word-break: break-word;
+                        
+                                @media screen and (max-width: 400px) {
+                                    font-size: 1.4rem;
+                                }
                         }
+
                         #svar-container {
                             display: flex;
                             gap: 100px;
@@ -431,10 +451,17 @@ body {
                         min-height: auto;
                     }
 
-                        h2 {
+                        #quiz-question {
                             color: white;
                             max-width: 850px;
-                            font-size: 1.5rem;
+                            font-size: 1.6rem;
+                            line-height: normal;
+                            font-family: "Playfair Display SC", serif;
+                            word-break: break-word;
+
+                                @media screen and (max-width: 400px) {
+                                    font-size: 1.4rem;
+                                }
                         }
 
                         #total-quiz-reset-container {
