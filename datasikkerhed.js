@@ -64,21 +64,21 @@ const forhøring = {
     },
 
     sp5n: {
-        text: 'Har du nogensinde stødt på målrettede reklamer på sociale medier, der føltes invasive eller intrusiv?',
+        text: 'Har du nogensinde stødt på målrettede reklamer på sociale medier, der føltes lidt for invaderende?',
         ja: 'sp5nj',
         nej: 'sp5nn'
     },
 
     sp4jjj: {
-        text: 'Godt! Det ser ud til at du har godt styr på dit digitale privatliv.'
+        text: 'Godt! Det ser ud til, at du har godt styr på dit digitale privatliv.'
     },
 
     sp4njj: {
-        text: 'Fedt! Det lyder til at du er opmærksom på dit online privatliv.'
+        text: 'Fedt! Det lyder til, at du er opmærksom på dit online privatliv.'
     },
 
     sp4jnn: {
-        text: 'Ok. I så fald er det vigtigt at du er opmærksom på, at dine dataoplysniner kan bruges på måder, du ikke er fuldstændig klar over.'
+        text: 'Ok. I så fald er det vigtigt, at du er opmærksom på, at dine dataoplysniner kan bruges på måder, du ikke er fuldstændig klar over.'
     },
 
     sp4jjn: {
@@ -90,7 +90,7 @@ const forhøring = {
     },
 
     sp4nnj: {
-        text: 'Sådan! Det lyder til at du aktivt administrerer dit online privatliv.'
+        text: 'Sådan! Det lyder til, at du aktivt administrerer dit online privatliv.'
     },
 
     sp4nnn: {
@@ -138,6 +138,12 @@ function questionDisplay () {
     } else {
         ja.style.display = 'block';
         nej.style.display = 'block';
+    }
+
+    if (currentQuestion === 'sp1') {
+        restartTest.style.display = "none";
+    } else {
+        restartTest.style.display = 'flex';
     }
 }
 
@@ -256,7 +262,7 @@ function displayRound(round) {
     if (round === 1) {
         totalReset.innerHTML = '';
     } else {
-        totalReset.innerHTML = 'Start helt forfra';
+        totalReset.innerHTML = 'Start quizzen helt forfra';
     }
 
     if (round === 5) {
@@ -274,9 +280,9 @@ function hvemVilVæreMillionær(event) {
     rigtigSvar = quiz[round].rigtigSvar;
 
     if (valgtSvar === rigtigSvar) {
-        this.style.backgroundColor = 'green';
+        this.style.backgroundColor = '#00FF0A';
         feedback.innerHTML = 'RIGTIGT';
-        feedback.style.color = 'green';
+        feedback.style.color = '#00FF0A';
         næsteKnap.style.display = 'grid';
         næsteKnap.addEventListener('click', videre);
     }
